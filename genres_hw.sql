@@ -9,9 +9,9 @@ CREATE TABLE IF NOT EXISTS artist (
 );
 
 CREATE TABLE IF NOT EXISTS genre_artist (
-	id SERIAL PRIMARY KEY,
 	genre_id INTEGER NOT NULL REFERENCES genre(genre_id),
-	artist_id INTEGER NOT NULL REFERENCES artist(artist_id)
+	artist_id INTEGER NOT NULL REFERENCES artist(artist_id),
+	CONSTRAINT gen_art PRIMARY KEY (genre_id, artist_id)
 );
 
 CREATE TABLE IF NOT EXISTS album (
@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS album (
 );
 
 CREATE TABLE IF NOT EXISTS artist_album (
-	id SERIAL PRIMARY KEY,
 	artist_id INTEGER NOT NULL REFERENCES artist(artist_id),
-	album_id INTEGER NOT NULL REFERENCES album(album_id)
+	album_id INTEGER NOT NULL REFERENCES album(album_id),
+	CONSTRAINT art_alb PRIMARY KEY (artist_id, album_id)
 );
 
 CREATE TABLE IF NOT EXISTS song (
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS compilation (
 );
 
 CREATE TABLE IF NOT EXISTS song_compilation (
-	id SERIAL PRIMARY KEY,
 	song_id INTEGER NOT NULL REFERENCES song(song_id),
-	comp_id INTEGER NOT NULL REFERENCES compilation(comp_id)
+	comp_id INTEGER NOT NULL REFERENCES compilation(comp_id),
+	CONSTRAINT son_com PRIMARY KEY (song_id, comp_id)
 );
