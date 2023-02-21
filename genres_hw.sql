@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS artist_album (
 CREATE TABLE IF NOT EXISTS song (
 	song_id SERIAL PRIMARY KEY,
 	song_name VARCHAR(255) NOT NULL,
-	song_duration TIME NOT NULL,
+	song_duration INTEGER NOT NULL,
 	album_id INTEGER NOT NULL REFERENCES album(album_id)
 );
 
@@ -44,3 +44,4 @@ CREATE TABLE IF NOT EXISTS song_compilation (
 	comp_id INTEGER NOT NULL REFERENCES compilation(comp_id),
 	CONSTRAINT son_com PRIMARY KEY (song_id, comp_id)
 );
+

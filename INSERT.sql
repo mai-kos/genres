@@ -28,28 +28,30 @@ VALUES
 	('Master of Puppets', 1986),
 	('Lonerism', 2012),
 	('Celebrate Life - EP', 2021),
-	('Swimming', 2018);
+	('Swimming', 2019);
 	
 INSERT INTO song (song_name, song_duration, album_id)
 VALUES 
-	('6 Summers', '00:04:43', 1),
-	('Who R U', '00:02:49', 1),
-	('Sexy Boy','00:04:58', 2),
-	('Talisman', '00:04:17', 2),
-	('1921', '00:02:49', 3),
-	('Sparks', '00:02:05', 3),
-	('The Fours', '00:03:27', 4),
-	('Lullaby', '00:03:34', 4),
-	('Battery', '00:05:12', 5),
-	('Orion', '00:08:27', 5),
-	('Led Zeppelin', '00:03:08', 6),
-	('Endors Toi', '00:03:07', 6),
-	('This U', '00:04:20', 7),
-	('Celebrate Life', '00:04:34', 7),
-	('Ladders', '00:04:47', 8),
-	('Hurt Feelings', '00:04:06', 8),
-	('My Generation', '00:03:19', 9),
-	('La-La-La Lies', '00:02:16', 9);
+	('6 Summers', 283, 1),
+	('Who R U', 169, 1),
+	('Sexy Boy', 298, 2),
+	('Talisman', 257, 2),
+	('1921', 169, 3),
+	('Sparks', 125, 3),
+	('The Fours', 207, 4),
+	('Lullaby', 214, 4),
+	('Battery', 312, 5),
+	('Orion', 507, 5),
+	('Led Zeppelin', 188, 6),
+	('Endors Toi', 187, 6),
+	('This U', 260, 7),
+	('Celebrate Life', 274, 7),
+	('Ladders', 287, 8),
+	('Hurt Feelings', 246, 8),
+	('My Generation', 199, 9),
+	('La-La-La Lies', 136, 9),
+	('Master of Puppets', 515, 5),
+	('Mind Mischief', 272, 6);
 	
 INSERT INTO compilation (comp_name, release_year)
 VALUES 
@@ -71,7 +73,10 @@ VALUES
 	(3, 5),
 	(2, 6),
 	(4, 7),
-	(7, 8);
+	(7, 8),
+	(5, 7),
+	(6, 8),
+	(7, 3);
 
 INSERT INTO artist_album (artist_id, album_id)
 VALUES 
