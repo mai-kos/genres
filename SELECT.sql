@@ -91,11 +91,17 @@ WHERE s.song_duration = (SELECT MIN(song_duration) FROM song);
 
 -- название альбомов, содержащих наименьшее количество треков
 
-SELECT album_name FROM album a 
-LEFT JOIN song s ON a.album_id = s.album_id 
-GROUP BY album_name
-HAVING COUNT(s.album_id) = (SELECT album_name 
-	FROM album a2
-	LEFT JOIN song s2 ON a2.album_id = s2.album_id) 
-	GROUP BY album_name 
-	ORDER BY COUNT(s2.album_id);
+SELECT a.album_name, COUNT(s.song_id) as num_songs
+FROM album a
+LEFT JOIN song s
+ON a.album_id = s.album_id
+GROUP BY a.album_id, a.album_name
+HAVING COUNT(s.song_id) = (
+  SELECT MIN(song_count) FROM (
+    SELECT COUNT(*) as song_count
+    FROM song
+    GROUP BY album_id
+  ) as subquery
+)
+
+
